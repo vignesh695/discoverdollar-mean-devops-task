@@ -1,3 +1,3 @@
 FROM nginx:latest
-COPY dist /usr/share/nginx/html
+COPY dist/angular-15-crud /usr/share/nginx/html
 EXPOSE 80
