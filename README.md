@@ -1,103 +1,125 @@
-# MEAN Stack CRUD DevOps Deployment
+# 🚀 MEAN Stack CRUD Application Deployment using AWS EC2 & Docker
 
-This project demonstrates the deployment of a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular, Node.js) on AWS EC2 using Docker.
+This project demonstrates the deployment of a full-stack CRUD application using:
 
----
+- MongoDB
+- Express.js
+- Angular
+- Node.js
 
-## 🚀 Deployment Steps
-
-### 1️⃣ AWS EC2 Instance Created
-- Instance Type: t3.micro
-- Security Group Ports Opened:
-  - 22 (SSH)
-  - 80 (HTTP)
-  - 8080 (Backend)
-
-![EC2 Running](ec2-running.png)
+The application is containerized using Docker and deployed on AWS EC2.
 
 ---
 
-### 2️⃣ SSH into EC2 Instance
+## 📦 Tech Stack
+
+Frontend: Angular  
+Backend: Node.js + Express  
+Database: MongoDB  
+Containerization: Docker + Docker Compose  
+Cloud: AWS EC2 (t3.micro)
+
+---
+
+## ☁️ AWS EC2 Instance Running
+
+![EC2 Running](./ec2-running.png)
+
+---
+
+## 🐳 Docker Containers Running in EC2
+
+![Docker Running](./docker%20running.png)
+
+---
+
+## 🌐 Application Running via Public IP
+
+![Public IP](./instance.png)
+
+---
+
+## 🔁 Backend Connectivity Test
+
+Tested using:
 
 ```bash
-ssh -i your-key.pem ubuntu@your-public-ip
+curl localhost
 ```
+
+![Localhost Curl](./localhost.png)
 
 ---
 
-### 3️⃣ Docker Installation
+## ✨ CRUD Operations
 
-```bash
-sudo apt update
-sudo apt install docker.io -y
-sudo systemctl start docker
-sudo systemctl enable docker
-```
+### 📌 Add Tutorial
+
+![Tutorial Add](./Tutorial_add.png)
 
 ---
 
-### 4️⃣ Clone Repository
+### 📝 Edit Tutorial
+
+![Tutorial Edit](./Tutorial_edit.png)
+
+---
+
+### 📋 Tutorial List
+
+![Tutorial List](./Tutorial_list.png)
+
+---
+
+### 🔄 Modify List
+
+![Modify List](./modify_list.png)
+
+---
+
+### ❌ Remove All
+
+![Remove All](./remove_all_button.png)
+
+---
+
+### 📤 Submit Operation
+
+![Submit](./submit.png)
+
+---
+
+## 🧠 Deployment Steps
+
+1. Launch EC2 Instance (Ubuntu)
+2. Install Docker & Docker Compose
+3. Clone Repository
 
 ```bash
 git clone https://github.com/vignesh695/discoverdollar-mean-devops-task.git
 cd discoverdollar-mean-devops-task
 ```
 
----
-
-### 5️⃣ Run Docker Compose
+4. Run Docker Compose
 
 ```bash
-docker-compose up -d --build
+docker-compose up --build -d
+```
+
+5. Access Application via Public IP
+
+```
+http://<EC2-PUBLIC-IP>
 ```
 
 ---
 
-### 6️⃣ Verify Running Containers
+## 📌 Note
 
-```bash
-docker ps
-```
-
-![Docker Running](docker running.png)
+Infrastructure is kept running for CI/CD demonstration if required in next rounds.
 
 ---
 
-## 🌐 Application Running on Browser
+## 👨‍💻 Author
 
-Access using:
-
-```
-http://100.53.115.27
-```
-
-![Tutorial List](Tutorial_list.png)
-
----
-
-## ➕ CRUD Operations
-
-### Add Tutorial
-![Add](Tutorial_add.png)
-
-### Submit Tutorial
-![Submit](submit.png)
-
-### View Tutorials
-![List](Tutorial_list.png)
-
-### Edit Tutorial
-![Edit](Tutorial_edit.png)
-
-### Remove All
-![Remove](remove_all_button.png)
-
----
-
-## 📂 GitHub Repository
-
-![Repo](github_repo.png)
-
----
-
-## ✅ Application Successfully Deployed on AWS EC2 using Docker
+Vignesh
